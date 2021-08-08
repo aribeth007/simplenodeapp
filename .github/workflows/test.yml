@@ -8,14 +8,14 @@ on:
 jobs:
   build:
   runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node-version: [12.x]
-        os: [macos-latest, windows-latest, ubuntu-latest]
-        include:
-          - node-version: 13.x
-            os: ubuntu-latest
-            experimental: true
+  strategy:
+    matrix:
+      node-version: [12.x]
+      os: [macos-latest, windows-latest, ubuntu-latest]
+      include:
+        - node-version: 13.x
+          os: ubuntu-latest
+          experimental: true
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
